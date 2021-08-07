@@ -46,8 +46,7 @@ Apply this command if you want to login into the admin panel:
     
     $ python manage.py createsuperuser   
     
-![python_celery_redis_django_postgres](https://user-images.githubusercontent.com/1752695/128603676-f62eac13-7531-46ae-9051-643fa727e793.png)
-
+![Screenshot_1](https://user-images.githubusercontent.com/1752695/128603695-5bc25195-af34-4e8b-b7ab-ae8b7845a5de.jpg)
 
 After the docker containers are running open the following links to visualize the tasks and the database insertion:
 
