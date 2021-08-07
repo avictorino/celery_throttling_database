@@ -32,15 +32,15 @@ Some databases use a default transaction isolation level that isn’t suitable f
     $ docker-compose up
 
 ### Docker Compose.yml
-Containe each worker required to start the process. Uncomment REDIS and Postgres if you don't already have them. 
+Contains each worker required to start the process. Uncomment REDIS and Postgres if you don't already have them. 
 
    
 ### Database configurations
 1 - Create a Postgres database named 'celery_ingestor'
-    
+
 2 - Create tables
 
-    $ python manage.py migrate
+        $ python manage.py migrate
 
 Apply this command if you want to login into the admin panel:
     
