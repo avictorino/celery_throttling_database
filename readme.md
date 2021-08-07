@@ -1,5 +1,7 @@
+
 # Throttling database connections in a distributed environment
 
+![python_celery_redis_django_postgres](https://user-images.githubusercontent.com/1752695/128603659-c3602903-4d3f-4d03-8f26-6be91e1c715f.png)
 
 ### Objective:
 Limit the database connections from a Cluster/Nodes auto-scalable.
@@ -43,6 +45,9 @@ Containe each worker required to start the process. Uncomment REDIS and Postgres
 Apply this command if you want to login into the admin panel:
     
     $ python manage.py createsuperuser   
+    
+![python_celery_redis_django_postgres](https://user-images.githubusercontent.com/1752695/128603676-f62eac13-7531-46ae-9051-643fa727e793.png)
+
 
 After the docker containers are running open the following links to visualize the tasks and the database insertion:
 
