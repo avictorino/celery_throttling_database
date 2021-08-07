@@ -14,7 +14,6 @@ def read_page(url):
     ReadPage(url).execute()
 
 
-#, rate_limit='5/s'
-@celery_app.task(name="database_ingestor")
+@celery_app.task(name="database_ingestor", rate_limit='5/s')
 def database_ingestor(page_data):
     DatabaseIngestor(page_data).execute()
