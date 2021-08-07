@@ -4,11 +4,11 @@
 ![python_celery_redis_django_postgres](https://user-images.githubusercontent.com/1752695/128603659-c3602903-4d3f-4d03-8f26-6be91e1c715f.png)
 
 ### Objective:
-Limit the database connections from a Cluster/Nodes auto-scalable.
+Limit the database connections from a Cluster/Nodes high scalable.
 
 This is a simple implementation to insert a reasonable amount of concurrent data using constraints and indexes in a controlled way.
 
-To simulate the environment I create a web crawler to download a website data including the auto-referenced links and insert int the database.
+To simulate the environment I web crawler has built to download a inteire website data including the auto-referenced links and insert into a single database instance.
 
 Basically I splited the functionality into 3 concurrent tasks to be easy to throttle the execution however we want.
 
