@@ -1,0 +1,54 @@
+version: '3'
+services:
+
+#  postgres:
+#    image: kartoza/postgis
+#    restart: always
+#    ports:
+#      - 5432:5432
+#    volumes:
+#      - postgres_data:/data
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: 123123
+#      POSTGRES_DB: postgres
+
+#    redis:
+#      ports:
+#        - 6379:6379
+#      image: redis:alpine
+#      restart: always
+#      volumes:
+#        - redis_data:/data
+
+  worker:
+    build: ./
+    image: celery_django_crawler
+    env_file:
+      - .env
+    command: celery -A ingestor.task worker --loglevel=INFO --autoscale=1,10
+
+  flower:
+    image: celery_django_crawler
+    env_file:
+      - .env
+    ports:
+      - "5002:5002"
+    command: celery flower -A ingestor.task --address=0.0.0.0 --port=5002 --loglevel=CRITICAL
+    depends_on:
+      - worker
+
+
+  web:
+    build: ./
+    image: celery_django_crawler
+    ports:
+      - "5001:5001"
+    env_file:
+      - .env
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:5001 --log-level=INFO
+
+
+volumes:
+  postgres_data:
+  redis_data:
