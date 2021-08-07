@@ -42,22 +42,29 @@ Contains each worker required to start the process. Uncomment REDIS and Postgres
 
         $ python manage.py migrate
 
-Apply this command if you want to login into the admin panel:
+3 - Apply the next command if you want to login into the admin panel:
     
     $ python manage.py createsuperuser   
     
 ![Screenshot_1](https://user-images.githubusercontent.com/1752695/128603695-5bc25195-af34-4e8b-b7ab-ae8b7845a5de.jpg)
 
-After the docker containers are running open the following links to visualize the tasks and the database insertion:
+After the docker containers are running open the following links to visualize the tasks and the database insertion rate:
 
     http://127.0.0.1:5002/tasks - Celery Dashboard
     http://127.0.0.1:8000/admin/core/page/ - Django admin 
     
-    
+
+### Start Workers
 To start the execution apply the following command line in the project root directory:
     ## !!! WARNING this script runs flushdb!!! 
     
     $python run.py 
+    
+### To run the app in your local machine:
+    $ python -m venv cellery_django
+    $ pip install -r requirements.txt
+    $ python manage.py runserver 8080
+    
     
 ### Tech Stack:
     Python
