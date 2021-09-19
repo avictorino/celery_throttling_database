@@ -1,26 +1,6 @@
 version: '3'
 services:
 
-#  postgres:
-#    image: kartoza/postgis
-#    restart: always
-#    ports:
-#      - 5432:5432
-#    volumes:
-#      - postgres_data:/data
-#    environment:
-#      POSTGRES_USER: postgres
-#      POSTGRES_PASSWORD: 123123
-#      POSTGRES_DB: postgres
-
-#    redis:
-#      ports:
-#        - 6379:6379
-#      image: redis:alpine
-#      restart: always
-#      volumes:
-#        - redis_data:/data
-
   worker:
     build: ./
     image: celery_django_crawler
